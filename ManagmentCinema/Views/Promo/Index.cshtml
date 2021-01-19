@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ManagmentCinema.Models.Promo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Promo</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Jour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDebutValidite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateFinValidite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rabais)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdFNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDebutValidite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateFinValidite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rabais)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdFNavigation.IdF)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodeP">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodeP">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodeP">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

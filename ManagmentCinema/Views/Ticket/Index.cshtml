@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ManagmentCinema.Models.Ticket>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Ticket</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateVente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodePromoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateVente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodePromoNavigation.CodeP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPNavigation.IdP)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdT">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdT">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdT">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

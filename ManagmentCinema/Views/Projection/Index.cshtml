@@ -1,0 +1,53 @@
+﻿@model IEnumerable<ManagmentCinema.Models.Projection>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Projection</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateProjection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TarifInitial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdFNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdSNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateProjection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TarifInitial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdFNavigation.IdF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSNavigation.IdS)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdP">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdP">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdP">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

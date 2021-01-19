@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ManagmentCinema.Models.GenreFilm>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Gener Film</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdFNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdGNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdFNavigation.IdF)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdGNavigation.IdG)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
