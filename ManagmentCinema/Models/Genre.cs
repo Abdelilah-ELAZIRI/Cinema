@@ -13,7 +13,7 @@ namespace ManagmentCinema.Models
         }
 
         public int IdG { get; set; }
-        public string Capacite { get; set; }
+        public string designation { get; set; }
 
         public virtual ICollection<GenreFilm> GenreFilms { get; set; }
     }

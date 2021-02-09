@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Adminateur\\Desktop\\Cinema\\Managment\\ManagmentCinema\\ManagmentCinema.csproj": {}
+    "D:\\Programmation\\Cinema\\Managment\\ManagmentCinema\\ManagmentCinema.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Adminateur\\Desktop\\Cinema\\Managment\\ManagmentCinema\\ManagmentCinema.csproj": {
+    "D:\\Programmation\\Cinema\\Managment\\ManagmentCinema\\ManagmentCinema.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Adminateur\\Desktop\\Cinema\\Managment\\ManagmentCinema\\ManagmentCinema.csproj",
+        "projectUniqueName": "D:\\Programmation\\Cinema\\Managment\\ManagmentCinema\\ManagmentCinema.csproj",
         "projectName": "ManagmentCinema",
-        "projectPath": "C:\\Users\\Adminateur\\Desktop\\Cinema\\Managment\\ManagmentCinema\\ManagmentCinema.csproj",
-        "packagesPath": "C:\\Users\\Adminateur\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Adminateur\\Desktop\\Cinema\\Managment\\ManagmentCinema\\obj\\",
+        "projectPath": "D:\\Programmation\\Cinema\\Managment\\ManagmentCinema\\ManagmentCinema.csproj",
+        "packagesPath": "C:\\Users\\Abdo4k\\.nuget\\packages\\",
+        "outputPath": "D:\\Programmation\\Cinema\\Managment\\ManagmentCinema\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Adminateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Abdo4k\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

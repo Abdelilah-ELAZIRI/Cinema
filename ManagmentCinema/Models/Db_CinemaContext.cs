@@ -33,7 +33,7 @@ namespace ManagmentCinema.Models
             modelBuilder.Entity<Cinema>(entity =>
             {
                 entity.HasKey(e => e.IdC)
-                    .HasName("PK__Cinema__DC501A2DA2226C7F");
+                    .HasName("PK__Cinema__DC501A2DAF9BD50C");
 
                 entity.ToTable("Cinema");
 
@@ -58,7 +58,7 @@ namespace ManagmentCinema.Models
             modelBuilder.Entity<Film>(entity =>
             {
                 entity.HasKey(e => e.IdF)
-                    .HasName("PK__Film__DC501A2ADCB6045E");
+                    .HasName("PK__Film__DC501A2ADF3032BB");
 
                 entity.ToTable("Film");
 
@@ -99,13 +99,13 @@ namespace ManagmentCinema.Models
             modelBuilder.Entity<Genre>(entity =>
             {
                 entity.HasKey(e => e.IdG)
-                    .HasName("PK__Genre__DC501A29D9BA45D2");
+                    .HasName("PK__Genre__DC501A29858BF830");
 
                 entity.ToTable("Genre");
 
                 entity.Property(e => e.IdG).HasColumnName("idG");
 
-                entity.Property(e => e.Capacite)
+                entity.Property(e => e.designation)
                     .HasMaxLength(50)
                     .IsUnicode(false);
             });
@@ -137,7 +137,7 @@ namespace ManagmentCinema.Models
             modelBuilder.Entity<Projection>(entity =>
             {
                 entity.HasKey(e => e.IdP)
-                    .HasName("PK__Projecti__DC501A205DA5F85F");
+                    .HasName("PK__Projecti__DC501A206F378E13");
 
                 entity.ToTable("Projection");
 
@@ -167,7 +167,7 @@ namespace ManagmentCinema.Models
             modelBuilder.Entity<Promo>(entity =>
             {
                 entity.HasKey(e => e.CodeP)
-                    .HasName("PK__Promo__F4ABF97F94BD756C");
+                    .HasName("PK__Promo__F4ABF97FCE0EC63C");
 
                 entity.ToTable("Promo");
 
@@ -200,7 +200,7 @@ namespace ManagmentCinema.Models
             modelBuilder.Entity<Salle>(entity =>
             {
                 entity.HasKey(e => e.IdS)
-                    .HasName("PK__Salle__DC501A1D91029188");
+                    .HasName("PK__Salle__DC501A1D03DD0B37");
 
                 entity.ToTable("Salle");
 
@@ -217,7 +217,7 @@ namespace ManagmentCinema.Models
             modelBuilder.Entity<Ticket>(entity =>
             {
                 entity.HasKey(e => e.IdT)
-                    .HasName("PK__Tickets__DC501A1C55B93FFB");
+                    .HasName("PK__Tickets__DC501A1C1F08E254");
 
                 entity.Property(e => e.IdT).HasColumnName("idT");
 

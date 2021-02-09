@@ -1,6 +1,7 @@
 ﻿using ManagmentCinema.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,8 @@ namespace ManagmentCinema.Controllers
         // GET: GenreController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var genre = db_CinemaContext.Genres.Find(id);
+            return View(genre);
         }
 
         // GET: GenreController/Create
@@ -39,10 +41,12 @@ namespace ManagmentCinema.Controllers
         // POST: GenreController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Genre genre)
         {
             try
             {
+                db_CinemaContext.Genres.Add(genre);
+                db_CinemaContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -54,16 +58,19 @@ namespace ManagmentCinema.Controllers
         // GET: GenreController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var genre = db_CinemaContext.Genres.Find(id);
+            return View(genre);
         }
 
         // POST: GenreController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Genre genre)
         {
             try
             {
+                db_CinemaContext.Entry(genre).State = EntityState.Modified;
+                db_CinemaContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -75,16 +82,19 @@ namespace ManagmentCinema.Controllers
         // GET: GenreController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var genre = db_CinemaContext.Genres.Find(id);
+            return View(genre);
         }
 
         // POST: GenreController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Genre genre)
         {
             try
             {
+                db_CinemaContext.Genres.Remove(genre);
+                db_CinemaContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch

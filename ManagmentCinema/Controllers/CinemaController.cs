@@ -1,6 +1,7 @@
 ﻿using ManagmentCinema.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,8 @@ namespace ManagmentCinema.Controllers
         // GET: CinemaController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var cinema = db_CinemaContext.Cinemas.Find(id);
+            return View(cinema);
         }
 
         // GET: CinemaController/Create
@@ -39,10 +41,12 @@ namespace ManagmentCinema.Controllers
         // POST: CinemaController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Cinema cinema)
         {
             try
             {
+                db_CinemaContext.Cinemas.Add(cinema);
+                db_CinemaContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -54,16 +58,19 @@ namespace ManagmentCinema.Controllers
         // GET: CinemaController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var cinema = db_CinemaContext.Cinemas.Find(id);
+            return View(cinema);
         }
 
         // POST: CinemaController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Cinema cinema)
         {
             try
             {
+                db_CinemaContext.Entry(cinema).State = EntityState.Modified;
+                db_CinemaContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -75,16 +82,19 @@ namespace ManagmentCinema.Controllers
         // GET: CinemaController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var cinema = db_CinemaContext.Cinemas.Find(id);
+            return View(cinema);
         }
 
         // POST: CinemaController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Cinema cinema)
         {
             try
             {
+                db_CinemaContext.Cinemas.Remove(cinema);
+                db_CinemaContext.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
